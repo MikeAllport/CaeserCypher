@@ -7,4 +7,4 @@ Create a CaeserCypher instance passing the shift value as argument.
 Method 'getCaeserFromString' takes the input string, and a boolean 'toEncode' indicating whether this is to encoded or decoded. This returns the encoded or decoded string  
   
 ## Things to keep in mind
-This assumes every input character is is within the alphabet range of 'a' - 'z', given quick google of the definition states that was the intent of the caeser shift. If using this you should add error checking in the main getCaeserFromString method during the character loop
+This assumes every input character is is within the alphabet range of 'a' - 'z', given quick google of the definition states that was the intent of the caeser shift, though some places used captilized alphabet some lowercase. If using this you should add error checking in the main getCaeserFromString method during the character loop
