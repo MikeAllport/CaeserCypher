@@ -4,4 +4,7 @@ Have tried using CleanCode practice with naming conventions, magic numbers etc, 
 
 ## Usage  
 Create a CaeserCypher instance passing the shift value as argument.  
-Method 'getCaeserFromString' takes the input string, and a boolean 'toEncode' indicating whether this is to encoded or decoded. This returns the encoded or decoded string
+Method 'getCaeserFromString' takes the input string, and a boolean 'toEncode' indicating whether this is to encoded or decoded. This returns the encoded or decoded string  
+  
+## Things to keep in mind
+This assumes every character is is within the alphabet range of 'a' - 'z', given quick google of the definition states that was the intent of the caeser shift. If using this you should add error checking in the main getCaeserFromString method during the character loop
