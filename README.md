@@ -13,8 +13,11 @@ Example
 cypher = CaesarCipher(3)
 cypher.encodeString("zab")
 print(cypher.getCaesarMessage())
+# outputs “cde”
+
 cypher.decodeString("zab")
 print(cypher.getCaesarMessage())
+#outputs “wxy”
 ```
   
 ## Things to keep in mind  
