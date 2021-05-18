@@ -7,6 +7,15 @@ Create a CaeserCypher instance passing the shift value as argument.
 Method 'encodeString' takes the input string and sets member variable caesarMessage to encoded message  
 Method 'decodeString' takes the input string and decodes same as above  
 Method 'getCaesarMessage' returns the encoded/decoded message  
+
+Example
+```python
+cypher = CaesarCipher(3)
+cypher.encodeString("zab")
+print(cypher.getCaesarMessage())
+cypher.decodeString("zab")
+print(cypher.getCaesarMessage())
+```
   
 ## Things to keep in mind  
 This assumes every input character is is within the alphabet range of 'a' - 'z', given quick google of the definition states that was the intent of the caeser cypher, though some places used captilized alphabet some lowercase. If using this you should add error checking in the main getCaeserFromString method during the character loop  
