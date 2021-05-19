@@ -4,30 +4,25 @@ class CaesarCypher():
             raise Exception("Invalid caesar shit exceeding alphabet or lower than 0")
         self.charShift = charShift
         self.caesarMessage = ""
-        self.__Z = 122
-        self.__A = 97
+        self.__Z = ord('z')
+        self.__A = ord('a')
         
     def encodeString(self, stringToEncode: str):
         self.caesarMessage = stringToEncode
-        self.__setCaesarMessage()
+        self.__setCaesarMessage(self.charShift)
     
     def decodeString(self, stringToDecode: str):
         self.caesarMessage = stringToDecode
-        self.__invertCharShift()
-        self.__setCaesarMessage()
-        self.__invertCharShift()
+        self.__setCaesarMessage(-self.charShift)
         
-    def __invertCharShift(self):
-        self.charShift = -self.charShift
-        
-    def __setCaesarMessage(self):
+    def __setCaesarMessage(self, shift: int):
         caesarString = ""
         for character in self.caesarMessage:
-            caesarString = caesarString + self.__getCaesarConvertedAscii(character)
+            caesarString = caesarString + self.__getCaesarConvertedAscii(character, shift)
         self.caesarMessage = caesarString
                 
-    def __getCaesarConvertedAscii(self, inputCharacter: str):
-        newAsciiValue = ord(inputCharacter) + self.charShift
+    def __getCaesarConvertedAscii(self, inputCharacter: str, shift: int):
+        newAsciiValue = ord(inputCharacter) + shift
         
         howManyGreaterThanZ = self.__asciiValueAboveZ(newAsciiValue)
         if howManyGreaterThanZ > 0:
